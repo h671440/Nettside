@@ -6,28 +6,7 @@ main{
     background-color: white;
 
 }
-button {
-    
 
-    background-color: hsl(0, 0%, 25%);
-    color: white;
-
-   
-
- 
-    transition: background-color 0.3s ease;
-}
-button:hover {
-    background-color: hsl(0, 0%, 15%);
-}
-
-.button a{
-    color: white;
-    padding: 10px 15px;
-    display: black;
-
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 .navbar {
     display: flex;
     justify-content: space-between; /* This pushes content to the left and right */
@@ -123,4 +102,19 @@ p a {
 
 p a:hover {
     text-decoration: underline;
+}
+.about-section {
+background-image: url("Sparegris.png");
+   
+}
+.overlay-text {
+    position: absolute; /* Position text over the background */
+    top: 50%; /* Center the text vertically */
+    left: 50%; /* Center the text horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center properly */
+    color: white; /* Make the text white for visibility */
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
+    border-radius: 10px; /* Optional: add rounded corners to the text background */
 }
