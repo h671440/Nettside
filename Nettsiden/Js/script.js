@@ -1,14 +1,38 @@
+// js/script.js
 
+document.getElementById('convertButton').addEventListener('click', convertCurrency);
 
-<nav class = "navbar"> 
-    <div class = "navdiv">
-        <div class = "logo"><a href = "Index.html">SpareGrisen</a></div>
-<ul> 
-    <li><a href="about.html"> About</a> </li>
-    <li><a href="products.html"> Products</a> </li>
-    <li><a href="contact.html"> Contact</a> </li>
-    <button><a href ="logIn.html">My profile</a> </button>
-   
-</ul>
-</div>
-</nav>
+async function convertCurrency() {
+    const amount = parseFloat(document.getElementById('amount').value);
+    const fromCurrency = document.getElementById('fromCurrency').value;
+    const toCurrency = document.getElementById('toCurrency').value;
+    const resultDiv = document.getElementById('result');
+
+    if (isNaN(amount) || amount <= 0) {
+        resultDiv.innerHTML = '<p>Please enter a valid amount.</p>';
+        return;
+    }
+
+    if (fromCurrency === toCurrency) {
+        resultDiv.innerHTML = `<p>The currencies are the same. ${amount} ${fromCurrency} = ${amount} ${toCurrency}</p>`;
+        return;
+    }
+
+    try {
+        // Make API call to currencyapi.com
+        const response = await fetch(`https://api.currencyapi.com/v3/latest?apikey=cur_live_SlfkVuR7bcKlNoxiVJx32W4A6VFU4QaC6Rj6Op8w&currencies=${toCurrency}&base_currency=${fromCurrency}`);
+        const data = await response.json();
+
+        if (data.data && data.data[toCurrency]) {
+            const rate = data.data[toCurrency].value;
+            const convertedAmount = (amount * rate).toFixed(2);
+
+            resultDiv.innerHTML = `<p>${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}</p>`;
+        } else {
+            resultDiv.innerHTML = '<p>Failed to retrieve exchange rates.</p>';
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        resultDiv.innerHTML = '<p>An error occurred while fetching exchange rates.</p>';
+    }
+}

@@ -1,9 +1,15 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 main{
     margin-top: 50px;
     margin-left: 20px;
     margin-right: 20px;
-    background-color: white;
+    
 
 }
 
@@ -104,8 +110,14 @@ p a:hover {
     text-decoration: underline;
 }
 .about-section {
-background-image: url("Sparegris.png");
-   
+
+background: url("../bilder/Sparegris.png") no-repeat center center;
+background-size: cover;
+min-height: 1000px; /* Set a minimum height */
+
+    margin-top: 10px; /* This will make the background start 50px higher */
+    padding-top: 20px; /* This adds padding inside the section */
+    width: 100%; /* Make the section full width */
 }
 .overlay-text {
     position: absolute; /* Position text over the background */
@@ -117,4 +129,95 @@ background-image: url("Sparegris.png");
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
     border-radius: 10px; /* Optional: add rounded corners to the text background */
+}
+
+.index-background{
+background: url('../bilder/Bakgrunn.png') no-repeat center center;
+background-size: cover;
+min-height: 1000px;
+margin-top: 10px;
+
+}
+.index-text {
+    position: absolute; /* Position text over the background */
+    top: 50%; /* Center the text vertically */
+    left: 50%; /* Center the text horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to center properly */
+    color: white; /* Make the text white for visibility */
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
+    border-radius: 10px; /* Optional: add rounded corners to the text background */
+}
+
+.contact-background{
+    background: url('../bilder/IMG_0193.JPG') no-repeat center center;
+    background-size: cover;
+    min-height: 1000px;
+    margin-top: 10px;
+    
+    }
+.contact-text {
+        position: absolute; /* Position text over the background */
+        top: 50%; /* Center the text vertically */
+        left: 50%; /* Center the text horizontally */
+        transform: translate(-50%, -50%); /* Adjust position to center properly */
+        color: white; /* Make the text white for visibility */
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
+        border-radius: 10px; /* Optional: add rounded corners to the text background */
+    }
+    .currency-converter {
+        background-color: #f9f9f9;
+        padding: 20px;
+        margin-top: 30px;
+        border-radius: 10px;
+    }
+    
+    .currency-converter h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+    
+    .converter-form {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .converter-form label {
+        flex: 1 1 100%;
+        margin-bottom: 5px;
+        color: #555;
+    }
+    
+    .converter-form input,
+    .converter-form select {
+        flex: 1 1 200px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    #convertButton {
+        padding: 10px 20px;
+        background-color: hsl(200, 100%, 50%);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #convertButton:hover {
+        background-color: hsl(200, 100%, 40%);
+    }
+    
+    #result {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #000;
+    }
+#result p{
+    color: #000;
 }
