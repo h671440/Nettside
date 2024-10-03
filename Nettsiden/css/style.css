@@ -1,0 +1,126 @@
+
+main{
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: white;
+
+}
+button {
+    
+
+    background-color: hsl(0, 0%, 25%);
+    color: white;
+
+   
+
+ 
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: hsl(0, 0%, 15%);
+}
+
+.button a{
+    color: white;
+    padding: 10px 15px;
+    display: black;
+
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between; /* This pushes content to the left and right */
+    align-items: center;
+    background-color: hsl(0, 0%, 25%);
+    padding: 10px 20px; /* Add some padding for a cleaner look */
+}
+.navbar ul {
+    display: flex; /* Ensure the nav items are inline */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-left: 20px; /* Add space between nav items */
+}
+.navbar a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Smaller padding for compact look */
+    text-align: center;
+    
+    
+}
+.navbar a:hover{
+    background-color: hsl(0, 0%, 10%);
+}
+
+
+.login {
+    background-color: hsl(0, 0%, 25%);
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.login:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+.logo {
+    font-size: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+}
+.logo a:hover {
+    background-color: hsl(0, 0%, 10%);
+    padding: 5px 10px;
+}
+
+.login-container, .signup-container {
+    width: 300px; /* Set a fixed width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+    padding: 20px;
+    background-color: hsl(0, 0%, 30%);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 100px; /* Center it vertically */
+}
+h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px; /* Same text style as the title */
+    color: white; /* White color for visibility */
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 90%; /* Full width for input fields */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid hsl(0, 0%, 60%);
+    border-radius: 5px;
+    font-size: 16px;
+}
+p {
+    color: white;
+    margin-top: 20px;
+}
+
+p a {
+    color: hsl(200, 100%, 50%);
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
