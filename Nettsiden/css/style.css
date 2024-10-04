@@ -268,8 +268,8 @@ h1 {
 }
 
 .slider-group label {
-    display: block;
-    margin-bottom: 10px;
+    
+    margin-bottom: 5px;
     font-weight: bold;
     color: #08121d;
 }
@@ -277,19 +277,47 @@ h1 {
 .slider-input {
     display: flex;
     align-items: center;
+    gap: 2px;
 }
 
 .slider-input input[type="range"] {
     flex: 1;
-    max-width: 300px; /* Adjust the slider length */
+    max-width: 200px;
 }
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.slider-input input[type="number"] {
+    width: 80px;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid #333; /* Makes it look like an underline instead of a box */
+    background-color: transparent;
+    font-size: 1em;
+    text-align: right; /* Centers the value for better readability */
+    outline: none; /* Remove the outline on focus */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
+}
+.slider-input input[type="number"]:focus {
+    border-bottom: 2px solid #0077cc; /* Change color when focused */
+}
+
 
 .slider-input span {
     margin-left: 10px;
-    width: 200px;
-    text-align: left;
     font-weight: bold;
     color: #333;
+}
+.unit-label {
+    position: absolute; /* Positioning relative to input box */
+    right: -25px; /* Adjust this to move the label closer or further away horizontally */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #333; /* Consistent color with other text */
+    margin-left: 0; /* Remove extra margin */
 }
 
 span {
@@ -354,7 +382,15 @@ span {
     font-size: 1.1em;
     color: #000;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 strong {
     font-size: 1.5em;
     color: #08121d;

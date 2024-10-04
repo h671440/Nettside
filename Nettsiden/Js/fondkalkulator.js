@@ -4,21 +4,46 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function updateValue(sliderId) {
-    const value = parseFloat(document.getElementById(sliderId).value);
+    const slider = document.getElementById(sliderId);
+    const input = document.getElementById(sliderId + '-input');
+    const value = parseFloat(slider.value);
     
-    // Update the displayed value below the slider
+    // Update the number input
+    input.value = value;
+
+    // Update the displayed value
     if (sliderId === 'spareperiode') {
-        document.getElementById(sliderId + '-value').innerText = value + ' år'; // Show years
-        document.getElementById('spareperiode-result').innerText = value; // Update the result display for years
-        document.getElementById('spareperiode-result-bank').innerText = value; // Update for bank comparison as well
+        document.getElementById(sliderId + '-value').innerText = value + ' år';
+        document.getElementById('spareperiode-result').innerText = value;
+        document.getElementById('spareperiode-result-bank').innerText = value;
     } else if (sliderId === 'aarligavkastning') {
-        document.getElementById(sliderId + '-value').innerText = value + '%'; // Show percentage
+        document.getElementById(sliderId + '-value').innerText = value + '%';
     } else {
-        document.getElementById(sliderId + '-value').innerText = formatNumber(value) + ' kr'; // Show formatted currency
+        document.getElementById(sliderId + '-value').innerText = formatNumber(value) + ' kr';
     }
 
-    // Recalculate and repaint the chart whenever a slider value changes
+    // Recalculate and repaint the chart
     calculateInvestment();
+}
+
+function updateSlider(sliderId) {
+    const slider = document.getElementById(sliderId);
+    const input = document.getElementById(sliderId + '-input');
+    let value = parseFloat(input.value);
+
+    // Ensure value is within slider's min and max
+    const min = parseFloat(slider.min);
+    const max = parseFloat(slider.max);
+
+    if (isNaN(value)) value = min;
+    if (value < min) value = min;
+    if (value > max) value = max;
+
+    // Update the slider
+    slider.value = value;
+
+    // Update the displayed value and recalculate
+    updateValue(sliderId);
 }
 
 function calculateInvestment() {

@@ -33,26 +33,47 @@
         <div class="sliders">
             <div class="slider-group">
                 <label for="engangstegning">Engangstegning</label>
-                <input type="range" id="engangstegning" min="0" max="1000000" step="100" value="1000" oninput="updateValue('engangstegning')">
-                <span id="engangstegning-value">1000 kr</span>
+                <div class="slider-input">
+                    <input type="range" id="engangstegning" min="0" max="1000000" step="100" value="1000" oninput="updateValue('engangstegning')">
+                    <div class="input-wrapper">
+                        <input type="number" id="engangstegning-input" min="0" max="1000000" step="100" value="1000" onchange="updateSlider('engangstegning')">
+                        <span class="unit-label">kr</span>
+                    </div>
+                </div>
             </div>
             <div class="slider-group">
                 <label for="manedligsparing">Månedlig sparing</label>
-                <input type="range" id="manedligsparing" min="0" max="20000" step="100" value="1000" oninput="updateValue('manedligsparing')">
-                <span id="manedligsparing-value">1000 kr</span>
+                <div class="slider-input">
+                    <input type="range" id="manedligsparing" min="0" max="20000" step="100" value="1000" oninput="updateValue('manedligsparing')">
+                    <div class="input-wrapper">
+                        <input type="number" id="manedligsparing-input" min="0" max="20000" step="100" value="1000" onchange="updateSlider('manedligsparing')">
+                        <span class="unit-label">kr</span>
+                    </div>
+                </div>
             </div>
             <div class="slider-group">
                 <label for="spareperiode">Spareperiode</label>
-                <input type="range" id="spareperiode" min="1" max="100" step="1" value="10" oninput="updateValue('spareperiode')">
-                <span id="spareperiode-value">10 år</span>
+                <div class="slider-input">
+                    <input type="range" id="spareperiode" min="1" max="100" step="1" value="10" oninput="updateValue('spareperiode')">
+                    <div class="input-wrapper">
+                        <input type="number" id="spareperiode-input" min="1" max="100" step="1" value="10" onchange="updateSlider('spareperiode')">
+                        <span class="unit-label">år</span>
+                    </div>
+                </div>
             </div>
             <div class="slider-group">
                 <label for="aarligavkastning">Årlig avkastning</label>
-                <input type="range" id="aarligavkastning" min="1" max="20" step="0.1" value="10" oninput="updateValue('aarligavkastning')">
-                <span id="aarligavkastning-value">10%</span>
+                <div class="slider-input">
+                    <input type="range" id="aarligavkastning" min="1" max="20" step="0.1" value="10" oninput="updateValue('aarligavkastning')">
+                    <div class="input-wrapper">
+                        <input type="number" id="aarligavkastning-input" min="1" max="20" step="0.1" value="10" onchange="updateSlider('aarligavkastning')">
+                        <span class="unit-label">%</span>
+                    </div>
+                </div>
             </div>
-            
         </div>
+        
+        
 
         <!-- Right section: Chart -->
         <div class="chart-section">
