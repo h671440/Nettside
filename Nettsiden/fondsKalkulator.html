@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+
+<nav class = "navbar"> 
+        <div class = "logo"><a href = "Index.html">SpareGrisen</a></div>
+<ul> 
+    <li><a href="about.html"> About</a> </li>
+    <li><a href="products.html"> Valuta-kalkulator</a> </li>
+    <li><a href ="fondsKalkulator.html">FondsKalkulator</a></li>
+    <li><a href="contact.html"> Contact</a> </li>
+    <li><a href = "logIn.html"> My Profile</a></li>
+   
+</ul>
+
+</nav>
+
+
+<div class="container">
+    <h1>Sparekalkulator</h1>
+
+    <!-- Left section: Input sliders -->
+    <div class="calculator-section">
+        <div class="sliders">
+            <div class="slider-group">
+                <label for="engangstegning">Engangstegning</label>
+                <input type="range" id="engangstegning" min="0" max="1000000" step="100" value="1000" oninput="updateValue('engangstegning')">
+                <span id="engangstegning-value">1000 kr</span>
+            </div>
+            <div class="slider-group">
+                <label for="manedligsparing">Månedlig sparing</label>
+                <input type="range" id="manedligsparing" min="0" max="20000" step="100" value="1000" oninput="updateValue('manedligsparing')">
+                <span id="manedligsparing-value">1000 kr</span>
+            </div>
+            <div class="slider-group">
+                <label for="spareperiode">Spareperiode</label>
+                <input type="range" id="spareperiode" min="1" max="100" step="1" value="10" oninput="updateValue('spareperiode')">
+                <span id="spareperiode-value">10 år</span>
+            </div>
+            <div class="slider-group">
+                <label for="aarligavkastning">Årlig avkastning</label>
+                <input type="range" id="aarligavkastning" min="1" max="20" step="0.1" value="10" oninput="updateValue('aarligavkastning')">
+                <span id="aarligavkastning-value">10%</span>
+            </div>
+            
+        </div>
+
+        <!-- Right section: Chart -->
+        <div class="chart-section">
+            <canvas id="growthChart"></canvas>
+        </div>
+    </div>
+
+    <!-- Result section: Displays below the chart -->
+    <div class="result-section">
+        <div class="result-box">
+            <h2>Innskudd</h2>
+            <p><strong id="total-innskudd">0 kr</strong></p>
+        </div>
+        <div class="result-box">
+            <h2>Avkastning</h2>
+            <p><strong id="total-avkastning">0 kr</strong></p>
+        </div>
+        <div class="result-box">
+            <h2>Total Verdi</h2>
+            <p>Etter <span id="spareperiode-result">10</span> år i fond:</p>
+            <p><strong id="total-verdi">0 kr</strong></p>
+        </div>
+        <div class="result-box">
+            <h2>Bank Verdi</h2>
+            <p>Etter <span id="spareperiode-result-bank">10</span> år i bank:</p>
+            <p><strong id="bank-verdi">0 kr</strong></p>
+        </div>
+    </div>
+    
+    
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1"></script>
+<script src="Js/fondkalkulator.js"></script>
+
+
+</main>
+</body>
+</html>
