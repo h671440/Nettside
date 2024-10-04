@@ -1,49 +1,60 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Call calculateInvestment initially to paint the first chart
+    const sliders = ['engangstegning', 'manedligsparing', 'spareperiode', 'aarligavkastning'];
+    sliders.forEach(sliderId => {
+        const slider = document.getElementById(sliderId);
+        const input = document.getElementById(`${sliderId}-input`);
+
+        slider.addEventListener('input', () => updateValue(sliderId));
+        input.addEventListener('change', () => updateSlider(sliderId));
+    });
+
     calculateInvestment();
 });
 
 function updateValue(sliderId) {
     const slider = document.getElementById(sliderId);
-    const input = document.getElementById(sliderId + '-input');
-    const value = parseFloat(slider.value);
-    
-    // Update the number input
-    input.value = value;
+    const input = document.getElementById(`${sliderId}-input`);
+    const value = slider.value;
 
-    // Update the displayed value
-    if (sliderId === 'spareperiode') {
-        document.getElementById(sliderId + '-value').innerText = value + ' år';
-        document.getElementById('spareperiode-result').innerText = value;
-        document.getElementById('spareperiode-result-bank').innerText = value;
-    } else if (sliderId === 'aarligavkastning') {
-        document.getElementById(sliderId + '-value').innerText = value + '%';
-    } else {
-        document.getElementById(sliderId + '-value').innerText = formatNumber(value) + ' kr';
+    // Only update the input if it's not focused
+    if (document.activeElement !== input) {
+        input.value = value;
     }
 
-    // Recalculate and repaint the chart
+    if (sliderId === 'spareperiode') {
+        document.getElementById('spareperiode-result').innerText = value;
+        document.getElementById('spareperiode-result-bank').innerText = value;
+    }
+
     calculateInvestment();
 }
 
 function updateSlider(sliderId) {
     const slider = document.getElementById(sliderId);
-    const input = document.getElementById(sliderId + '-input');
-    let value = parseFloat(input.value);
+    const input = document.getElementById(`${sliderId}-input`);
+    let value = input.value;
 
     // Ensure value is within slider's min and max
     const min = parseFloat(slider.min);
     const max = parseFloat(slider.max);
 
-    if (isNaN(value)) value = min;
-    if (value < min) value = min;
-    if (value > max) value = max;
+    if (isNaN(value) || value === '' || value < min) {
+        value = min;
+    } else if (value > max) {
+        value = max;
+    }
 
-    // Update the slider
-    slider.value = value;
+    // Update the slider value only if it differs from the input value
+    if (slider.value !== value.toString()) {
+        slider.value = value;
+    }
 
-    // Update the displayed value and recalculate
-    updateValue(sliderId);
+    if (sliderId === 'spareperiode') {
+        document.getElementById('spareperiode-result').innerText = value;
+        document.getElementById('spareperiode-result-bank').innerText = value;
+    }
+
+    calculateInvestment();
 }
 
 function calculateInvestment() {
@@ -66,7 +77,7 @@ function calculateInvestment() {
     for (let month = 1; month <= totalMonths; month++) {
         // Apply interest to existing investment and add monthly savings
         totalInvestment = totalInvestment * (1 + monthlyRate) + manedligInnskudd;
-    
+        
         // Record the value at the end of each year
         if (month % 12 === 0) {
             investmentValues.push(totalInvestment);
@@ -91,7 +102,6 @@ function calculateInvestment() {
     document.getElementById('total-avkastning').innerText = formatNumber(totalEarnings);
     document.getElementById('total-verdi').innerText = formatNumber(totalValue);
     document.getElementById('bank-verdi').innerText = formatNumber(totalBankSavings);
-    
 
     generateGrowthChart(labels, investmentValues);
 }

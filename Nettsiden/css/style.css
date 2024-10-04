@@ -243,7 +243,8 @@ body {
 
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
 h1 {
@@ -257,10 +258,12 @@ h1 {
     justify-content: space-between;
     align-items: flex-start;
     gap: 30px;
+    flex-wrap: wrap;
 }
 
 .sliders {
-    width: 35%;
+    width: 100%;
+    max-width: 400px;
 }
 
 .slider-group {
@@ -268,7 +271,6 @@ h1 {
 }
 
 .slider-group label {
-    
     margin-bottom: 5px;
     font-weight: bold;
     color: #08121d;
@@ -277,75 +279,70 @@ h1 {
 .slider-input {
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 10px;
 }
 
 .slider-input input[type="range"] {
     flex: 1;
     max-width: 200px;
 }
+
 .input-wrapper {
     display: flex;
     align-items: center;
     position: relative;
 }
+
 .slider-input input[type="number"] {
     width: 80px;
     padding: 5px;
     border: none;
-    border-bottom: 2px solid #333; /* Makes it look like an underline instead of a box */
+    border-bottom: 2px solid #333;
     background-color: transparent;
     font-size: 1em;
-    text-align: right; /* Centers the value for better readability */
-    outline: none; /* Remove the outline on focus */
-    transition: border-color 0.3s ease; /* Smooth transition for border color */
+    text-align: right;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
+
 .slider-input input[type="number"]:focus {
-    border-bottom: 2px solid #0077cc; /* Change color when focused */
+    border-bottom: 2px solid #0077cc;
 }
 
-
-.slider-input span {
-    margin-left: 10px;
-    font-weight: bold;
-    color: #333;
-}
 .unit-label {
-    position: absolute; /* Positioning relative to input box */
-    right: -25px; /* Adjust this to move the label closer or further away horizontally */
+    position: absolute;
+    right: -25px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1em;
-    color: #333; /* Consistent color with other text */
-    margin-left: 0; /* Remove extra margin */
-}
-
-span {
-    display: inline-block;
-    width: 100px;
-    text-align: right;
-    font-weight: bold;
+    color: #333;
 }
 
 .chart-section {
-    width: 55%;
+    flex: 1;
+    min-width: 300px;
+}
+
+.chart-section canvas {
+    width: 100% !important;
+    height: 400px !important;
 }
 
 .result-section {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap; /* Allows boxes to wrap on smaller screens */
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .result-box {
     background-color: #c6c6c6;
     padding: 20px;
     border-radius: 10px;
-    width: 23%; /* Adjusted width to fit four boxes in a row */
+    flex: 1 1 calc(25% - 20px);
     text-align: center;
-    box-sizing: border-box; /* Ensures padding doesn't affect total width */
-    margin-bottom: 20px; /* Adds space between rows when wrapping */
+    box-sizing: border-box;
 }
 
 .result-box h2 {
@@ -358,30 +355,12 @@ span {
     font-size: 1.1em;
     color: #000000;
 }
-.current-values {
-    width: 25%;
-    background-color: #f5f5f5;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: left;
+
+strong {
+    font-size: 1.5em;
+    color: #08121d;
 }
 
-.current-values h2 {
-    font-size: 1.2em;
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.current-values p {
-    margin-bottom: 10px;
-    font-size: 1em;
-    color: #333;
-}
-
-.current-values strong {
-    font-size: 1.1em;
-    color: #000;
-}
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
@@ -391,26 +370,25 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
-strong {
-    font-size: 1.5em;
-    color: #08121d;
-}
-chart-section {
-    width: 40%;
-}
 
-.chart-section canvas {
-    width: 100% !important;
-    height: 400px !important;
-}
 @media (max-width: 800px) {
     .result-box {
-        width: 48%; /* Two boxes per row on medium screens */
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .calculator-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sliders, .chart-section {
+        width: 100%;
+        max-width: none;
     }
 }
 
 @media (max-width: 500px) {
     .result-box {
-        width: 100%; /* One box per row on small screens */
+        flex: 1 1 100%;
     }
 }
