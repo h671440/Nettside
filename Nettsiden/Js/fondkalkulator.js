@@ -71,8 +71,11 @@ function calculateInvestment() {
     const monthlyRate = aarligAvkastning / 100 / 12;
     const totalMonths = sparePeriode * 12;
     let totalInvestment = engangstegning;
+    let bankValues = [engangstegning];
     const investmentValues = [totalInvestment];
     const labels = ['0'];
+
+    const bankAnnualRate = 0.03;
 
     for (let month = 1; month <= totalMonths; month++) {
         // Apply interest to existing investment and add monthly savings
@@ -80,8 +83,13 @@ function calculateInvestment() {
         
         // Record the value at the end of each year
         if (month % 12 === 0) {
+            let year = month / 12;
+            let lastBankValue = bankValues[bankValues.length - 1];
+            lastBankValue = lastBankValue * (1 + bankAnnualRate) + manedligInnskudd * 12;
+            bankValues.push(lastBankValue);
+
             investmentValues.push(totalInvestment);
-            labels.push((month / 12).toString());
+            labels.push(year.toString()); //
         }
     }
 
@@ -103,7 +111,7 @@ function calculateInvestment() {
     document.getElementById('total-verdi').innerText = formatNumber(totalValue);
     document.getElementById('bank-verdi').innerText = formatNumber(totalBankSavings);
 
-    generateGrowthChart(labels, investmentValues);
+    generateGrowthChart(labels, investmentValues, bankValues);
 }
 
 // Function to format numbers as currency
@@ -111,7 +119,7 @@ function formatNumber(number) {
     return new Intl.NumberFormat('no-NO', { style: 'currency', currency: 'NOK' }).format(number);
 }
 
-function generateGrowthChart(labels, data) {
+function generateGrowthChart(labels, investmentData, bankData) {
     const ctx = document.getElementById('growthChart').getContext('2d');
 
     // Clear the previous chart if it exists
@@ -126,14 +134,25 @@ function generateGrowthChart(labels, data) {
             labels: labels,
             datasets: [{
                 label: 'Investeringens verdi over tid (NOK)',
-                data: data,
+                data: investmentData,
                 backgroundColor: 'rgba(54, 162, 235, 0.2)', // Light blue fill
                 borderColor: 'rgba(54, 162, 235, 1)', // Blue line
                 borderWidth: 2,
                 fill: true,
                 pointRadius: 3,
                 pointBackgroundColor: 'rgba(54, 162, 235, 1)'
-            }]
+            },
+            {
+                label: 'Bankinnskudd over tid (NOK)',
+                data: bankData,
+                backgroundColor: 'rgba(255, 99, 132, 0.2)', // Light red fill
+                borderColor: 'rgba(255, 99, 132, 1)', // Red line
+                borderWidth: 2,
+                fill: true,
+                pointRadius: 3,
+                pointBackgroundColor: 'rgba(255, 99, 132, 1)'
+            }
+        ]
         },
         options: {
             scales: {
