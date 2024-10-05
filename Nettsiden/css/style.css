@@ -1,4 +1,5 @@
 
+
 * {
     margin: 0;
     padding: 0;
@@ -391,3 +392,32 @@ input[type="number"] {
         flex: 1 1 100%;
     }
 }
+
+/* Basic styling for the SVG map */
+svg {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    background-color: transparent; /* Ensures the SVG itself isn't masked by a background */
+}
+
+.land {
+    fill: lightgray;
+    stroke: black;
+    stroke-width: 1px;
+    transition: fill 0.3s ease;
+}
+
+.land:hover {
+    fill: darkgray !important;
+    cursor: pointer;
+}
+
+
+#map-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+

@@ -4,8 +4,17 @@ document.addEventListener('DOMContentLoaded', function () {
         const slider = document.getElementById(sliderId);
         const input = document.getElementById(`${sliderId}-input`);
 
-        slider.addEventListener('input', () => updateValue(sliderId));
-        input.addEventListener('change', () => updateSlider(sliderId));
+        // Update when the slider is adjusted
+        slider.addEventListener('input', () => {
+            updateValue(sliderId);
+            calculateInvestment();  // Recalculate on slider change
+        });
+
+        // Update when the input field changes
+        input.addEventListener('input', () => {
+            updateSlider(sliderId);
+            calculateInvestment();  // Recalculate on input change
+        });
     });
 
     calculateInvestment();
@@ -16,7 +25,7 @@ function updateValue(sliderId) {
     const input = document.getElementById(`${sliderId}-input`);
     const value = slider.value;
 
-    // Only update the input if it's not focused
+    // Sync input field with slider value
     if (document.activeElement !== input) {
         input.value = value;
     }
@@ -25,8 +34,6 @@ function updateValue(sliderId) {
         document.getElementById('spareperiode-result').innerText = value;
         document.getElementById('spareperiode-result-bank').innerText = value;
     }
-
-    calculateInvestment();
 }
 
 function updateSlider(sliderId) {
@@ -34,7 +41,7 @@ function updateSlider(sliderId) {
     const input = document.getElementById(`${sliderId}-input`);
     let value = input.value;
 
-    // Ensure value is within slider's min and max
+    // Sync slider value with input field, ensuring it's within the valid range
     const min = parseFloat(slider.min);
     const max = parseFloat(slider.max);
 
@@ -44,17 +51,12 @@ function updateSlider(sliderId) {
         value = max;
     }
 
-    // Update the slider value only if it differs from the input value
-    if (slider.value !== value.toString()) {
-        slider.value = value;
-    }
+    slider.value = value;
 
     if (sliderId === 'spareperiode') {
         document.getElementById('spareperiode-result').innerText = value;
         document.getElementById('spareperiode-result-bank').innerText = value;
     }
-
-    calculateInvestment();
 }
 
 function calculateInvestment() {
@@ -71,48 +73,48 @@ function calculateInvestment() {
     const monthlyRate = aarligAvkastning / 100 / 12;
     const totalMonths = sparePeriode * 12;
     let totalInvestment = engangstegning;
-    let bankValues = [engangstegning];
+    let totalBankSavings = engangstegning;
+    let totalContributions = engangstegning; // Start with initial deposit
+    let bankValues = [totalBankSavings];
     const investmentValues = [totalInvestment];
     const labels = ['0'];
 
-    const bankAnnualRate = 0.03;
+    const bankAnnualRate = 0.03; // 3% annual bank interest
 
     for (let month = 1; month <= totalMonths; month++) {
-        // Apply interest to existing investment and add monthly savings
+        // Apply monthly interest to the investment and add monthly savings
         totalInvestment = totalInvestment * (1 + monthlyRate) + manedligInnskudd;
-        
-        // Record the value at the end of each year
+
+        // Add monthly savings to total contributions
+        totalContributions += manedligInnskudd;
+
+        // Apply annual bank interest and add yearly contributions
         if (month % 12 === 0) {
             let year = month / 12;
-            let lastBankValue = bankValues[bankValues.length - 1];
-            lastBankValue = lastBankValue * (1 + bankAnnualRate) + manedligInnskudd * 12;
-            bankValues.push(lastBankValue);
 
+            // Bank savings: apply 3% annual interest once per year and add yearly savings
+            totalBankSavings = totalBankSavings * (1 + bankAnnualRate) + manedligInnskudd * 12;
+
+            // Add values for the chart
+            bankValues.push(totalBankSavings);
             investmentValues.push(totalInvestment);
-            labels.push(year.toString()); //
+            labels.push(year.toString());
         }
     }
 
-    // Calculate total contributions
-    const totalContributions = engangstegning + (manedligInnskudd * totalMonths);
-
-    // Calculate total earnings
+    // Calculate total earnings from the investment
     const totalEarnings = totalInvestment - totalContributions;
 
-    // Calculate total value (final investment amount)
-    const totalValue = totalInvestment;
-
-    // Bank savings for comparison (no growth, only contributions)
-    const totalBankSavings = totalContributions;
-
-    // Update data output fields
+    // Update UI fields
     document.getElementById('total-innskudd').innerText = formatNumber(totalContributions);
     document.getElementById('total-avkastning').innerText = formatNumber(totalEarnings);
-    document.getElementById('total-verdi').innerText = formatNumber(totalValue);
-    document.getElementById('bank-verdi').innerText = formatNumber(totalBankSavings);
+    document.getElementById('total-verdi').innerText = formatNumber(totalInvestment); 
+    document.getElementById('bank-verdi').innerText = formatNumber(totalBankSavings); 
 
+    // Update the chart
     generateGrowthChart(labels, investmentValues, bankValues);
 }
+
 
 // Function to format numbers as currency
 function formatNumber(number) {
@@ -139,7 +141,7 @@ function generateGrowthChart(labels, investmentData, bankData) {
                 borderColor: 'rgba(54, 162, 235, 1)', // Blue line
                 borderWidth: 2,
                 fill: true,
-                pointRadius: 3,
+                pointRadius: 2,
                 pointBackgroundColor: 'rgba(54, 162, 235, 1)'
             },
             {
@@ -149,10 +151,9 @@ function generateGrowthChart(labels, investmentData, bankData) {
                 borderColor: 'rgba(255, 99, 132, 1)', // Red line
                 borderWidth: 2,
                 fill: true,
-                pointRadius: 3,
+                pointRadius: 2,
                 pointBackgroundColor: 'rgba(255, 99, 132, 1)'
-            }
-        ]
+            }]
         },
         options: {
             scales: {
@@ -168,6 +169,19 @@ function generateGrowthChart(labels, investmentData, bankData) {
                         text: 'Verdi (NOK)'
                     },
                     beginAtZero: true
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            const year = labels[tooltipItem.dataIndex];
+                            const investmentValue = investmentData[tooltipItem.dataIndex];
+                            const bankValue = bankData[tooltipItem.dataIndex];
+
+                            return `År: ${year}, Investering: ${investmentValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK' })}, Bank: ${bankValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK' })}`;
+                        }
+                    }
                 }
             }
         }
