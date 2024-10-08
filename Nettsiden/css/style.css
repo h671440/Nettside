@@ -15,6 +15,11 @@ main{
     width: 100%;
 
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #eceaea;
+}
+
 
 .navbar {
     display: flex;
@@ -242,10 +247,6 @@ margin-top: 10px;
     box-sizing: border-box;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #eceaea;
-}
 
 .container {
     max-width: 1200px;
