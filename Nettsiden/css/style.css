@@ -7,10 +7,12 @@
 }
 
 main{
-    margin-top: 50px;
-    margin-left: 20px;
-    margin-right: 20px;
-    
+   
+  display: flex;
+  justify-content: flex-start;;
+    align-items: flex-start;
+    margin: 50px auto;
+    width: 100%;
 
 }
 
@@ -112,7 +114,7 @@ p a:hover {
 }
 .about-section {
 
-background: url("../bilder/Sparegris.png") no-repeat center center;
+
 background-size: cover;
 min-height: 1000px; /* Set a minimum height */
 
@@ -123,11 +125,15 @@ min-height: 1000px; /* Set a minimum height */
 .overlay-text {
     position: absolute; /* Position text over the background */
     top: 50%; /* Center the text vertically */
-    left: 50%; /* Center the text horizontally */
+    left: 70%; /* Center the text horizontally */
     transform: translate(-50%, -50%); /* Adjust position to center properly */
     color: white; /* Make the text white for visibility */
     text-align: center;
     padding: 20px;
+    flex: 1;
+    max-width: 40%;
+    margin-right: 20px;
+    color: white;
     background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
     border-radius: 10px; /* Optional: add rounded corners to the text background */
 }
@@ -399,6 +405,7 @@ svg {
     height: auto;
     max-width: 600px;
     background-color: transparent; /* Ensures the SVG itself isn't masked by a background */
+    margin-left: 20px;
 }
 
 .land {
@@ -415,9 +422,11 @@ svg {
 
 
 #map-container {
-    float: right;
-    margin-right: 10px;
+    
+    flex: 1;
+    margin-left: 20px;
     width:60%;
+
 
 }
 
@@ -431,4 +440,13 @@ svg {
     pointer-events: none;  /* Prevents the box from interfering with hover events */
     font-size: 14px;
     z-index: 1000;  /* Ensures the box appears above other content */
+}
+.poverty-info-box {
+    flex: 0.4;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
 }
