@@ -10,9 +10,10 @@ main{
    
   display: flex;
   justify-content: flex-start;;
-    align-items: flex-start;
-    margin: 50px auto;
-    width: 100%;
+  align-items: flex-start;
+  margin: 50px auto;
+  width: 90%;
+  gap: 20px;
 
 }
 body {
@@ -143,13 +144,6 @@ min-height: 1000px; /* Set a minimum height */
     border-radius: 10px; /* Optional: add rounded corners to the text background */
 }
 
-.index-background{
-background: url('../bilder/Bakgrunn.png') no-repeat center center;
-background-size: cover;
-min-height: 1000px;
-margin-top: 10px;
-
-}
 .index-text {
     position: absolute; /* Position text over the background */
     top: 50%; /* Center the text vertically */
@@ -162,25 +156,8 @@ margin-top: 10px;
     border-radius: 10px; /* Optional: add rounded corners to the text background */
 }
 
-.contact-background{
-    background: url('../bilder/IMG_0193.JPG') no-repeat center center;
-    background-size: cover;
-    min-height: 1000px;
-    margin-top: 10px;
-    
-    }
-.contact-text {
-        position: absolute; /* Position text over the background */
-        top: 50%; /* Center the text vertically */
-        left: 50%; /* Center the text horizontally */
-        transform: translate(-50%, -50%); /* Adjust position to center properly */
-        color: white; /* Make the text white for visibility */
-        text-align: center;
-        padding: 20px;
-        background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
-        border-radius: 10px; /* Optional: add rounded corners to the text background */
-    }
-    .currency-converter {
+
+.currency-converter {
         background-color: #f9f9f9;
         padding: 20px;
         margin-top: 30px;
@@ -191,51 +168,52 @@ margin-top: 10px;
         text-align: center; 
         position: absolute;
         
-    }
+}
     
-    .currency-converter h2 {
+.currency-converter h2 {
         margin-bottom: 20px;
         color: #333;
-    }
+}
     
-    .converter-form {
+.converter-form {
         display: flex;
         flex-wrap: wrap;
         gap: 15px;
-    }
+}
     
-    .converter-form label {
+.converter-form label {
         flex: 1 1 100%;
         margin-bottom: 5px;
         color: #555;
-    }
     
-    .converter-form input,
-    .converter-form select {
+}
+    
+.converter-form input,
+.converter-form select {
         flex: 1 1 200px;
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
-    }
+}
     
-    #convertButton {
+#convertButton {
         padding: 10px 20px;
         background-color: hsl(200, 100%, 50%);
         color: white;
         border: none;
         border-radius: 5px;
         cursor: pointer;
-    }
+}
     
-    #convertButton:hover {
+#convertButton:hover {
         background-color: hsl(200, 100%, 40%);
-    }
+}
     
-    #result {
+#result {
         margin-top: 20px;
         font-size: 18px;
         color: #000;
-    }
+}
 #result p{
     color: #000;
 }
@@ -424,10 +402,10 @@ svg {
 
 #map-container {
     
-    flex: 1;
-    margin-left: 20px;
-    width:60%;
-
+    flex: 1.4;
+    margin: 0 auto;
+    position: relative;
+    width: 80%; /* Control the size of the map container */
 
 }
 
@@ -445,9 +423,89 @@ svg {
 .poverty-info-box {
     flex: 0.4;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border-radius: 10px;
     margin-right: 20px;
     margin-bottom: 20px;
+    margin-left: 20px;
+    width: 80%; /* Fixed width to maintain consistency */
+    min-height: 200px; /* Set a minimum height to ensure consistency */
+    overflow: hidden; 
 }
+
+/*Index knapper på hjem skjerm*/
+.button-container{
+    display: grid;
+    grid-template-areas: 
+    ". economy . "
+    "health lykke memories"
+    ". blog . ";
+    width: 80%;
+    gap: 20px;
+    max-width: 900px;
+    margin: 50px auto;
+}
+.rounded-button {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: hsl(0, 0%, 25%);
+    color: #ffffff;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    border-radius: 20px;
+    height: 100px;
+    width: 200px;
+    font-size: 1.5em;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+.rounded-button:hover {
+    background-color: hsl(0, 0%, 10%);
+}
+.rounded-button.lykke {
+    cursor: default;
+    background-color: #d3d3d3; /* Grey color for 'Lykke' button */
+    grid-area: lykke;
+    width: 140px;
+    height: 140px;
+    transform: rotate(45deg); /* Diamond shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rounded-button.lykke span {
+    transform: rotate(-45deg); /* Rotate text back to normal */
+    display: block;
+    width: 100%;
+    text-align: center;
+ }
+.rounded-button[href="../Nettsiden/economy/economy.html"] {
+    grid-area: economy;
+}
+.rounded-button[href="https://www.helsenorge.no"] {
+    grid-area: health;
+}
+.rounded-button[href="preserve-memories.html"] {
+    grid-area: memories;
+}
+.rounded-button[href="blog.html"] {
+    grid-area: blog;
+}
+@media (max-width: 600px) {
+    .button-container {
+        grid-template-columns: 1fr; /* Stack buttons vertically on smaller screens */
+        grid-template-areas: 
+            "lykke"
+            "economy"
+            "health"
+            "memories"
+            "blog";
+    }
+}
+
