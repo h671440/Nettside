@@ -17,7 +17,7 @@ main{
 
 }
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #eceaea;
 }
 
@@ -434,8 +434,20 @@ svg {
     overflow: hidden; 
 }
 
-/*Index knapper på hjem skjerm*/
+
 .button-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    max-width: 1200px;
+    gap: 20px;
+    max-width: 90%;
+    margin: 100px auto;
+    justify-items: center;
+    
+}
+/*Index knapper på hjem skjerm*/
+.button-container1{
     display: grid;
     grid-template-areas: 
     ". economy . "
@@ -456,10 +468,9 @@ svg {
     margin: 0 auto;
     margin-top: 20px;
     margin-bottom: 20px;
-    
     border-radius: 20px;
-    height: 100px;
-    width: 200px;
+    height: 150px;
+    width: 250px;
     font-size: 1.5em;
     text-align: center;
     text-decoration: none;
