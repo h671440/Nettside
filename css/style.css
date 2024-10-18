@@ -522,27 +522,41 @@ svg {
     }
 }
 @media (max-width: 768px) {/*IPHONE*/
-
-    main {
-        display: flex;
-        flex-direction: column; /* Stack elements vertically */
-        align-items: center;
-        justify-content: center;
-    }
-
-    #map-container {
-        width: 90%; /* Make the map container bigger */
-        max-width: 700px; /* Larger map for smaller screens */
-    }
-
-    svg {
-        max-width: 100%;
-        margin: 0 auto;
-    }
-
     .logo
     {
         font-size: 20px;
+    }
+    .about-section {
+        min-height: 600px; /* Set a minimum height */
+        display: flex;
+        align-items: center;
+    }
+    #map-container {
+        flex: 1.4;
+        margin: 0 auto;
+        position: relative;
+        width: 10%; /* Control the size of the map container */
+    }
+
+    .overlay-text {
+        
+   
+        left: 50%; /* Center the text horizontally */
+        transform: translate(-10%, -20%); /* Adjust position to center properly */
+    }
+    .poverty-info-box{
+       
+        
+        transform: translate(-180%, 80%);
+        flex: 0.6;
+        min-height: 280px;
+    }
+    svg {
+        
+        height: auto;
+        max-width: 600px;
+        margin: 20px auto;
+        
     }
 
  
@@ -568,17 +582,15 @@ svg {
     }
     
     .overlay-text {
-        order: 3;
-        text-align: center;
-        margin-top: 20px;
+        left: 50%; /* Center the text horizontally */
+        transform: translate(-10%, 20%); /* Adjust position to center properly */
     }
     .poverty-info-box{
-        margin: 20px auto;
-        width: 90%;
-        order: 2;
-        text-align: center;
+        transform: translate(-180%, 80%);
+        flex: 0.6;
+        min-height: 280px;
     }
-   
+
 
 }
 
