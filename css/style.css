@@ -359,27 +359,7 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 
-@media (max-width: 800px) {
-    .result-box {
-        flex: 1 1 calc(50% - 20px);
-    }
 
-    .calculator-section {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .sliders, .chart-section {
-        width: 100%;
-        max-width: none;
-    }
-}
-
-@media (max-width: 500px) {
-    .result-box {
-        flex: 1 1 100%;
-    }
-}
 
 /* Basic styling for the SVG map */
 svg {
@@ -543,6 +523,7 @@ svg {
         
             "economy"
             "health"
+            "lykke"
             "memories"
             "blog";
     }
@@ -578,6 +559,21 @@ svg {
     }
 }
 
+@media (max-width: 800px) {
+    .result-box {
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .calculator-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sliders, .chart-section {
+        width: 100%;
+        max-width: none;
+    }
+}
 
 @media (max-width: 500px) {
     .result-box {
