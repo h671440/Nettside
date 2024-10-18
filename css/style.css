@@ -28,18 +28,19 @@ body {
     align-items: center;
     background-color: hsl(0, 0%, 25%);
     padding: 10px 20px; /* Add some padding for a cleaner look */
-    flex-wrap: wrap; 
+    flex-wrap: nowrap; 
 }
 .navbar ul {
     display: flex; /* Ensure the nav items are inline */
     list-style-type: none;
     margin: 10px 0 0 0;
     padding: 0;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .navbar li {
     margin-left: 20px; /* Add space between nav items */
+    white-space: nowrap;
 }
 .navbar a{
     color: white;
@@ -518,13 +519,17 @@ svg {
     }
 }
 @media (max-width: 768px) {/*IPHONE*/
+    .logo
+    {
+        font-size: 20px;
+    }
 
     .navbar {
-        flex-direction: column; /* Stack items vertically on smaller screens */
+        flex-direction:row;
         align-items: flex-start; /* Align items to the left */
     }
     .navbar ul {
-        flex-direction: column; /* Add space between the logo and nav items */
+        flex-direction: row; /* Add space between the logo and nav items */
         width: 100%;
     }
     .button-container1 {
@@ -551,10 +556,7 @@ svg {
 }
 
 @media (max-width: 500px) {
-    .logo
-    {
-        font-size: 20px;
-    }
+   
     .button-container {
         width: 100%;
         margin: 30px auto;
