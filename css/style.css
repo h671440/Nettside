@@ -552,7 +552,7 @@ svg {
     .overlay-text {
         order: 3;
         left: 50%; /* Center the text horizontally */
-        transform: translate(-10%, 20%); /* Adjust position to center properly */
+        transform: translate(-15%, -5%); /* Adjust position to center properly */
     }
     .poverty-info-box{
         order: 2;
