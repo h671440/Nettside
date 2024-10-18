@@ -141,7 +141,7 @@ function generateGrowthChart(labels, investmentData, bankData) {
                 borderColor: 'rgba(54, 162, 235, 1)', // Blue line
                 borderWidth: 2,
                 fill: true,
-                pointRadius: 2,
+                pointRadius: 0,
                 pointBackgroundColor: 'rgba(54, 162, 235, 1)'
             },
             {
@@ -151,7 +151,7 @@ function generateGrowthChart(labels, investmentData, bankData) {
                 borderColor: 'rgba(255, 99, 132, 1)', // Red line
                 borderWidth: 2,
                 fill: true,
-                pointRadius: 2,
+                pointRadius: 0,
                 pointBackgroundColor: 'rgba(255, 99, 132, 1)'
             }]
         },
