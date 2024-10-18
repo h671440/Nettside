@@ -482,14 +482,24 @@ svg {
 .rounded-button[href="economy/economy.html"] {
     grid-area: economy;
 }
-.rounded-button[href="https://www.helsenorge.no"] {
+.rounded-button[href="Helse/helse.html"] {
     grid-area: health;
 }
-.rounded-button[href="preserve-memories.html"] {
+.rounded-button[href="minner/preserve-memories.html"] {
     grid-area: memories;
 }
-.rounded-button[href="blog.html"] {
+.rounded-button[href="Blogg/blog.html"] {
     grid-area: blog;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+    color: white; /* Set the icon color to white to match the other links */
+    vertical-align: middle; /* Aligns the icon vertically within the navbar */
 }
 @media (max-witdh: 1024px) { /*IPAD*/
     .button-container {
