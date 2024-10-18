@@ -527,14 +527,7 @@ svg {
         font-size: 20px;
     }
 
-    .navbar {
-        flex-direction:row;
-        align-items: flex-start; /* Align items to the left */
-    }
-    .navbar ul {
-        flex-direction: row; /* Add space between the logo and nav items */
-        width: 100%;
-    }
+ 
     .button-container1 {
     
         grid-template-areas: 
@@ -605,4 +598,5 @@ svg {
     .result-box {
         flex: 1 1 100%;
     }
+    
 }
