@@ -496,7 +496,7 @@ svg {
     width: 100%;
     text-align: center;
  }
-.rounded-button[href="../Nettsiden/economy/economy.html"] {
+.rounded-button[href="economy/economy.html"] {
     grid-area: economy;
 }
 .rounded-button[href="https://www.helsenorge.no"] {
