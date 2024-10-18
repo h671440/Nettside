@@ -540,7 +540,7 @@ svg {
     .button-container1 {
     
         grid-template-areas: 
-            "lykke"
+        
             "economy"
             "health"
             "memories"
