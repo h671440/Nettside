@@ -555,6 +555,17 @@ svg {
         height: 140px;
         font-size: 1.2em;
     }
+    
+    .overlay-text {
+        left: 50%; /* Center the text horizontally */
+        transform: translate(-10%, 20%); /* Adjust position to center properly */
+    }
+    .poverty-info-box{
+        transform: translate(-180%, 80%);
+        flex: 0.6;
+        min-height: 280px;
+    }
+
 
 }
 
