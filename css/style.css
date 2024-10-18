@@ -28,14 +28,14 @@ body {
     align-items: center;
     background-color: hsl(0, 0%, 25%);
     padding: 10px 20px; /* Add some padding for a cleaner look */
-    flex-wrap: nowrap; 
+    flex-wrap: wrap; 
 }
 .navbar ul {
     display: flex; /* Ensure the nav items are inline */
     list-style-type: none;
     margin: 10px 0 0 0;
     padding: 0;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
 }
 
 .navbar li {
@@ -132,7 +132,6 @@ min-height: 600px; /* Set a minimum height */
     padding-top: 20px; /* This adds padding inside the section */
     width: 100%; /* Make the section full width */
     display: flex;
-    
     align-items: center;
 }
 .overlay-text {
@@ -369,6 +368,7 @@ svg {
     max-width: 600px;
     background-color: transparent; /* Ensures the SVG itself isn't masked by a background */
     margin: 20px auto;
+    margin-left: 20px; 
 }
 
 .land {
@@ -410,12 +410,15 @@ svg {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border-radius: 10px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
+   margin:0 auto;
+    text-align: center;
     width: 80%; /* Fixed width to maintain consistency */
     min-height: 200px; /* Set a minimum height to ensure consistency */
     overflow: hidden; 
+    top: 50%; /* Center the text vertically */
+    left: 50%; /* Center the text horizontally */
+    transform: translate(-200%, 40%); /* Adjust position to center properly */
+    
 }
 
 
