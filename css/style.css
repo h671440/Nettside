@@ -306,7 +306,68 @@
         border-radius: 10px; /* Optional: add rounded corners to the text background */
     }
     
+
+    /* VALUE Calculator Styles */
     
+    .currency-converter {
+        background-color: #f9f9f9;
+        padding: 20px;
+        max-width: 400px;
+        margin: 50px auto;
+        border-radius: 10px;
+        text-align: center; 
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        
+    }
+        
+    .currency-converter h2 {
+            margin-bottom: 20px;
+            color: #333;
+    }
+        
+    .converter-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+    }
+        
+    .converter-form label {
+            flex: 1 1 100%;
+            margin-bottom: 5px;
+            color: #555;
+        
+    }
+        
+    .converter-form input,
+    .converter-form select {
+            flex: 1 1 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+    }
+        
+    #convertButton {
+            padding: 10px 20px;
+            background-color: hsl(200, 100%, 50%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+    }
+        
+    #convertButton:hover {
+            background-color: hsl(200, 100%, 40%);
+    }
+        
+    #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #000;
+    }
+    #result p{
+        color: #000;
+    }
+
     
 
 }

@@ -7,6 +7,7 @@ async function convertCurrency() {
     const fromCurrency = document.getElementById('fromCurrency').value;
     const toCurrency = document.getElementById('toCurrency').value;
     const resultDiv = document.getElementById('result');
+    const apikey = `cur_live_UpeUcW12Hj2VOD7f1iZ6upjhIDPfUxlQES0qIETa`;
 
     if (isNaN(amount) || amount <= 0) {
         resultDiv.innerHTML = '<p>Please enter a valid amount.</p>';
@@ -20,7 +21,7 @@ async function convertCurrency() {
 
     try {
         // Make API call to currencyapi.com
-        const response = await fetch(`https://api.currencyapi.com/v3/latest?apikey=cur_live_SlfkVuR7bcKlNoxiVJx32W4A6VFU4QaC6Rj6Op8w&currencies=${toCurrency}&base_currency=${fromCurrency}`);
+        const response = await fetch(`https://api.currencyapi.com/v3/latest?apikey=${apikey}&currencies=${toCurrency}&base_currency=${fromCurrency}`);
         const data = await response.json();
 
         if (data.data && data.data[toCurrency]) {
