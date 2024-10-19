@@ -1,26 +1,5 @@
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-main{
-   
-  display: flex;
-  justify-content: flex-start;;
-  align-items: flex-start;
-  margin: 50px auto;
-  width: 90%;
-  gap: 20px;
-
-}
-body {
-    font-family: 'Roboto', Arial, sans-serif;
-    background-color: #eceaea;
-}
-
 
 .navbar {
     display: flex;
@@ -53,449 +32,22 @@ body {
 .navbar a:hover{
     background-color: hsl(0, 0%, 10%);
 }
-
-
-.login {
-    background-color: hsl(0, 0%, 25%);
-    padding: 10px 15px;
-    border-radius: 5px;
-    text-decoration: none;
-}
-.login:hover {
-    background-color: hsl(0, 0%, 10%);
-}
-.logo {
-    font-size: 30px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.logo a {
-    color: white;
-    text-decoration: none;
-}
-.logo a:hover {
-    background-color: hsl(0, 0%, 10%);
-    padding: 5px 10px;
-}
-
-.login-container, .signup-container {
-    width: 90%; /* Set a fixed width for the form */
-    max-width: 400px; /* Set a maximum width */
-    margin: 50px auto; /* Center the form horizontally */
-    padding: 20px;
-    background-color: hsl(0, 0%, 30%);
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    
-}
-h2 {
-    color: white;
-    margin-bottom: 20px;
-}
-label {
-    display: block;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px; /* Same text style as the title */
-    color: white; /* White color for visibility */
-    margin-bottom: 10px;
-}
-
-input[type="text"], input[type="password"] {
-    width: 100%; /* Full width for input fields */
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid hsl(0, 0%, 60%);
-    border-radius: 5px;
-    font-size: 16px;
-}
-p {
-    color: white;
-    margin-top: 20px;
-}
-
-p a {
-    color: hsl(200, 100%, 50%);
-    text-decoration: none;
-}
-
-p a:hover {
-    text-decoration: underline;
-}
-.about-section {
-
-
-background-size: cover;
-min-height: 600px; /* Set a minimum height */
-
-    margin-top: 10px; /* This will make the background start 50px higher */
-    padding-top: 20px; /* This adds padding inside the section */
-    width: 100%; /* Make the section full width */
-    display: flex;
-    align-items: center;
-}
-.overlay-text {
-    position: absolute; /* Position text over the background */
-    top: 50%; /* Center the text vertically */
-    left: 70%; /* Center the text horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to center properly */
-    color: white; /* Make the text white for visibility */
-    text-align: center;
-    padding: 20px;
-    flex: 1;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
-    border-radius: 10px; /* Optional: add rounded corners to the text background */
-}
-
-.index-text {
-    position: absolute; /* Position text over the background */
-    top: 50%; /* Center the text vertically */
-    left: 50%; /* Center the text horizontally */
-    transform: translate(-50%, -50%); /* Adjust position to center properly */
-    color: white; /* Make the text white for visibility */
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
-    border-radius: 10px; /* Optional: add rounded corners to the text background */
-}
-
-
-.currency-converter {
-        background-color: #f9f9f9;
-        padding: 20px;
-        max-width: 400px;
-        margin: 50px auto;
-        border-radius: 10px;
-        text-align: center; 
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    
-}
-    
-.currency-converter h2 {
-        margin-bottom: 20px;
-        color: #333;
-}
-    
-.converter-form {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-}
-    
-.converter-form label {
-        flex: 1 1 100%;
-        margin-bottom: 5px;
-        color: #555;
-    
-}
-    
-.converter-form input,
-.converter-form select {
-        flex: 1 1 200px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-}
-    
-#convertButton {
-        padding: 10px 20px;
-        background-color: hsl(200, 100%, 50%);
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-}
-    
-#convertButton:hover {
-        background-color: hsl(200, 100%, 40%);
-}
-    
-#result {
-        margin-top: 20px;
-        font-size: 18px;
-        color: #000;
-}
-#result p{
-    color: #000;
-}
-/* Funds Calculator Styles */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-.container {
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
-
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.calculator-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.sliders {
-    width: 100%;
-    max-width: 400px;
-}
-
-.slider-group {
-    margin-bottom: 20px;
-}
-
-.slider-group label {
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #08121d;
-}
-
-.slider-input {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.slider-input input[type="range"] {
-    flex: 1;
-    max-width: 200px;
-}
-
-.input-wrapper {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.slider-input input[type="number"] {
-    width: 80px;
-    padding: 5px;
-    border: none;
-    border-bottom: 2px solid #333;
-    background-color: transparent;
-    font-size: 1em;
-    text-align: right;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.slider-input input[type="number"]:focus {
-    border-bottom: 2px solid #0077cc;
-}
-
-.unit-label {
-    position: absolute;
-    right: -25px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1em;
-    color: #333;
-}
-
-.chart-section {
-    flex: 1;
-    min-width: 300px;
-}
-
-.chart-section canvas {
-    width: 100% !important;
-    height: 400px !important;
-}
-
-.result-section {
-    margin-top: 40px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.result-box {
-    background-color: #c6c6c6;
-    padding: 20px;
-    border-radius: 10px;
-    flex: 1 1 calc(25% - 20px);
-    text-align: center;
-    box-sizing: border-box;
-    font-size: 1em;
-}
-
-.result-box h2 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
-.result-box p {
-    margin-bottom: 10px;
-    font-size: 1.1em;
-    color: #000000;
-}
-
-strong {
-    font-size: 1.5em;
-    color: #08121d;
-}
-
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-input[type="number"] {
-    -moz-appearance: textfield;
-}
-
-
-
-/* Basic styling for the SVG map */
-svg {
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    background-color: transparent; /* Ensures the SVG itself isn't masked by a background */
-    margin: 20px auto;
-    margin-left: 20px; 
-}
-
-.land {
-    fill: lightgray;
-    stroke: black;
-    stroke-width: 1px;
-    transition: fill 0.3s ease;
-}
-
-.land:hover {
-    fill: darkgray !important;
-    cursor: pointer;
-}
-
-
-#map-container {
-    
-    flex: 1.4;
-    margin: 0 auto;
-    position: relative;
-    width: 80%; /* Control the size of the map container */
-
-}
-
-#county-name-box {
-    position: absolute; /* Ensures it can follow the mouse pointer */
-    display: none; /* Initially hidden */
-    padding: 5px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    border-radius: 5px;
-    pointer-events: none;  /* Prevents the box from interfering with hover events */
-    font-size: 14px;
-    z-index: 1000;  /* Ensures the box appears above other content */
-}
-.poverty-info-box {
-    flex: 0.4;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border-radius: 10px;
-   margin:0 auto;
-    text-align: center;
-    width: 80%; /* Fixed width to maintain consistency */
-    min-height: 200px; /* Set a minimum height to ensure consistency */
-    overflow: hidden; 
-    top: 50%; /* Center the text vertically */
-    left: 50%; /* Center the text horizontally */
-    transform: translate(-200%, 40%); /* Adjust position to center properly */
-    
-}
-
-
-.button-container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 90%;
-    max-width: 1200px;
-    gap: 20px;
-    max-width: 90%;
-    margin: 50px auto;
-    justify-items: center;
-    
-}
-/*Index knapper på hjem skjerm*/
-.button-container1{
-    display: grid;
-    grid-template-areas: 
-    ". economy . "
-    "health lykke memories"
-    ". blog . ";
-    width: 80%;
-    gap: 20px;
-    max-width: 900px;
-    margin: 50px auto;
-}
-.rounded-button {
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: hsl(0, 0%, 25%);
-    color: #ffffff;
-    margin: 0 auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 20px;
-    height: 180px;
-    width: 300px;
-    font-size: 1.5em;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-.rounded-button:hover {
-    background-color: hsl(0, 0%, 10%);
-}
-.rounded-button.lykke {
-    cursor: default;
-    background-color: #d3d3d3; /* Grey color for 'Lykke' button */
-    grid-area: lykke;
-    width: 150px;
-    height: 150px;
-    transform: rotate(45deg); /* Diamond shape */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.rounded-button.lykke span {
-    transform: rotate(-45deg); /* Rotate text back to normal */
-    display: block;
-    width: 100%;
-    text-align: center;
- }
-.rounded-button[href="economy/economy.html"] {
+.rounded-button1[href="economy/economy.html"] {
     grid-area: economy;
 }
-.rounded-button[href="Helse/helse.html"] {
+.rounded-button1[href="Helse/helse.html"] {
     grid-area: health;
 }
-.rounded-button[href="minner/preserve-memories.html"] {
+.rounded-button1[href="minner/preserve-memories.html"] {
     grid-area: memories;
 }
-.rounded-button[href="Blogg/blog.html"] {
+.rounded-button1[href="Blogg/blog.html"] {
     grid-area: blog;
 }
 
+.rounded-button:hover {
+    background-color: hsl(0, 0%, 10%);
+}
 .material-symbols-outlined {
     font-variation-settings:
     'FILL' 0,
@@ -505,23 +57,265 @@ svg {
     color: white; /* Set the icon color to white to match the other links */
     vertical-align: middle; /* Aligns the icon vertically within the navbar */
 }
-@media (max-witdh: 1024px) { /*IPAD*/
-    .button-container {
-        grid-template-columns: repeat(2, 1fr); /* Two buttons per row on smaller screens */
-        gap:30px;
 
+
+
+
+@media only screen and (max-width: 600px) {
+    .result-box {
+        flex: 1 1 100%;
     }
-    .button-container1 {
-        grid-template-columns: repeat(2, 1fr); /* Two buttons per row on smaller screens */
-        gap:30px;
+ 
+    .login {
+        background-color: hsl(0, 0%, 25%);
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .login:hover {
+        background-color: hsl(0, 0%, 10%);
+    }
+    .logo {
+        font-size: 20px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .logo a {
+        color: white;
+        text-decoration: none;
+    }
+    .logo a:hover {
+        background-color: hsl(0, 0%, 10%);
+        padding: 5px 10px;
+    }
+    
+    .login-container, .signup-container {
+        width: 90%; /* Set a fixed width for the form */
+        max-width: 400px; /* Set a maximum width */
+        margin: 50px auto; /* Center the form horizontally */
+        padding: 20px;
+        background-color: hsl(0, 0%, 30%);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        
+    }
+    h2 {
+        color: white;
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px; /* Same text style as the title */
+        color: white; /* White color for visibility */
+        margin-bottom: 10px;
+    }
+    
+    input[type="text"], input[type="password"] {
+        width: 90%; /* Full width for input fields */
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid hsl(0, 0%, 60%);
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    p {
+        color: white;
+        margin-top: 20px;
+    }
+    
+    p a {
+        color: hsl(200, 100%, 50%);
+        text-decoration: none;
+    }
+    
+    p a:hover {
+        text-decoration: underline;
+    }
+
+    /* hjemsiden*/
+
+    .button-container1{
+        display: grid;
+        grid-template-areas: 
+        ". economy . "
+        "health lykke memories"
+        ". blog . ";
+        width: 100%;
+        justify-items: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        
+    }
+    .rounded-button1 {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        background-color: hsl(0, 0%, 25%);
+        color: #ffffff;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        height: 65px;
+        width: 80px;
+        font-size: 1.3em;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+  
+    .rounded-button1.lykke {
+        cursor: default;
+        background-color: #d3d3d3; /* Grey color for 'Lykke' button */
+        grid-area: lykke;
+        width: 50px;
+        height: 50px;
+        transform: rotate(45deg); /* Diamond shape */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rounded-button1.lykke span {
+        transform: rotate(-45deg); /* Rotate text back to normal */
+        display: block;
+        width: 100%;
+        text-align: center;
+     }
+
+     .button-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        max-width: 600px;
+        justify-items: center;
+        
+        
     }
     .rounded-button {
-        width: 250px;
-        height: 150px;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        background-color: hsl(0, 0%, 25%);
+        color: #ffffff;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        height: 90px;
+        width: 140px;
         font-size: 1.3em;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+
+
+    /* Basic styling for the SVG map */
+    svg {
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        background-color: transparent; /* Ensures the SVG itself isn't masked by a background */
+        margin: 20px auto;
+        margin-left: 20px; 
+    }
+    
+    .land {
+        fill: lightgray;
+        stroke: black;
+        stroke-width: 1px;
+        transition: fill 0.3s ease;
+    }
+    
+    .land:hover {
+        fill: darkgray !important;
+        cursor: pointer;
+    }
+    
+    
+    #map-container {
+        
+        flex: 1.4;
+        margin: 0 auto;
+        position: relative;
+        width: 80%; /* Control the size of the map container */
+    
+    }
+    
+    #county-name-box {
+        position: absolute; /* Ensures it can follow the mouse pointer */
+        display: none; /* Initially hidden */
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 5px;
+        pointer-events: none;  /* Prevents the box from interfering with hover events */
+        font-size: 14px;
+        z-index: 1000;  /* Ensures the box appears above other content */
+    }
+    .poverty-info-box {
+        flex: 0.4;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border-radius: 10px;
+        margin:0 auto;
+        text-align: center;
+        width: 80%; /* Fixed width to maintain consistency */
+        min-height: 200px; /* Set a minimum height to ensure consistency */
+        overflow: hidden; 
+        top: 50%; /* Center the text vertically */
+        left: 50%; /* Center the text horizontally */
+        transform: translate(-200%, 40%); /* Adjust position to center properly */
+        
+    }
+    .about-section {
+    
+        min-height: 600px; /* Set a minimum height */
+        margin-top: 10px; /* This will make the background start 50px higher */
+        padding-top: 20px; /* This adds padding inside the section */
+        width: 100%; /* Make the section full width */
+        display: flex;
+        align-items: center;
+    }
+    .overlay-text {
+        position: absolute; /* Position text over the background */
+        top: 50%; /* Center the text vertically */
+        left: 70%; /* Center the text horizontally */
+        transform: translate(-50%, -50%); /* Adjust position to center properly */
+        color: white; /* Make the text white for visibility */
+        text-align: center;
+        padding: 20px;
+        flex: 1;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
+        border-radius: 10px; /* Optional: add rounded corners to the text background */
+    }
+    
+    .index-text {
+        position: absolute; /* Position text over the background */
+        top: 50%; /* Center the text vertically */
+        left: 50%; /* Center the text horizontally */
+        transform: translate(-50%, -50%); /* Adjust position to center properly */
+        color: white; /* Make the text white for visibility */
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
+        border-radius: 10px; /* Optional: add rounded corners to the text background */
+    }
+    
+
+}
+@media only screen and (min-width: 601px) {
+    .rounded-button {
+        width: 100%;
+        font-size: 1em;
     }
 }
-@media (max-width: 768px) {/*IPHONE*/
+@media only screen and (min-width: 768px) {/*IPHONE*/
     .logo
     {
         font-size: 20px;
@@ -541,7 +335,7 @@ svg {
     .overlay-text {
         
    
-        left: 50%; /* Center the text horizontally */
+         /* Center the text horizontally */
         transform: translate(-10%, -20%); /* Adjust position to center properly */
     }
     .poverty-info-box{
@@ -592,25 +386,6 @@ svg {
     }
 
 
-}
-
-@media (max-width: 500px) {
-   
-    .button-container {
-        width: 100%;
-        margin: 30px auto;
-    }
-    .button-container1 {
-        width: 100%;
-        margin: 30px auto;
-    }
-    .rounded-button {
-        width: 90%;
-        font-size: 1.1em;
-    }
-}
-
-@media (max-width: 800px) {
     .result-box {
         flex: 1 1 calc(50% - 20px);
     }
@@ -625,10 +400,476 @@ svg {
         max-width: none;
     }
 }
+@media only screen and (min-witdh: 992px) { /*IPAD*/
+    .button-container {
+        grid-template-columns: repeat(2, 1fr); /* Two buttons per row on smaller screens */
+        gap:30px;
 
-@media (max-width: 500px) {
-    .result-box {
-        flex: 1 1 100%;
+    }
+    .button-container1 {
+        grid-template-columns: repeat(2, 1fr); /* Two buttons per row on smaller screens */
+        gap:30px;
+    }
+    .rounded-button {
+        width: 250px;
+        height: 150px;
+        font-size: 1.3em;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
     
-}
+    main{
+       
+      display: flex;
+      justify-content: flex-start;;
+      align-items: flex-start;
+      margin: 50px auto;
+      width: 90%;
+      gap: 20px;
+    
+    }
+    body {
+        font-family: 'Roboto', Arial, sans-serif;
+        background-color: #eceaea;
+    }
+    
+    
+    .login {
+        background-color: hsl(0, 0%, 25%);
+        padding: 10px 15px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .login:hover {
+        background-color: hsl(0, 0%, 10%);
+    }
+    .logo {
+        font-size: 30px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .logo a {
+        color: white;
+        text-decoration: none;
+    }
+    .logo a:hover {
+        background-color: hsl(0, 0%, 10%);
+        padding: 5px 10px;
+    }
+    
+    .login-container, .signup-container {
+        width: 90%; /* Set a fixed width for the form */
+        max-width: 400px; /* Set a maximum width */
+        margin: 50px auto; /* Center the form horizontally */
+        padding: 20px;
+        background-color: hsl(0, 0%, 30%);
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        
+    }
+    h2 {
+        color: white;
+        margin-bottom: 20px;
+    }
+    label {
+        display: block;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 16px; /* Same text style as the title */
+        color: white; /* White color for visibility */
+        margin-bottom: 10px;
+    }
+    
+    input[type="text"], input[type="password"] {
+        width: 100%; /* Full width for input fields */
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid hsl(0, 0%, 60%);
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    p {
+        color: white;
+        margin-top: 20px;
+    }
+    
+    p a {
+        color: hsl(200, 100%, 50%);
+        text-decoration: none;
+    }
+    
+    p a:hover {
+        text-decoration: underline;
+    }
+    .about-section {
+    
+    
+        background-size: cover;
+        min-height: 600px; /* Set a minimum height */
+        margin-top: 10px; /* This will make the background start 50px higher */
+        padding-top: 20px; /* This adds padding inside the section */
+        width: 100%; /* Make the section full width */
+        display: flex;
+        align-items: center;
+    }
+    .overlay-text {
+        position: absolute; /* Position text over the background */
+        top: 50%; /* Center the text vertically */
+        left: 70%; /* Center the text horizontally */
+        transform: translate(-50%, -50%); /* Adjust position to center properly */
+        color: white; /* Make the text white for visibility */
+        text-align: center;
+        padding: 20px;
+        flex: 1;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
+        border-radius: 10px; /* Optional: add rounded corners to the text background */
+    }
+    
+    .index-text {
+        position: absolute; /* Position text over the background */
+        top: 50%; /* Center the text vertically */
+        left: 50%; /* Center the text horizontally */
+        transform: translate(-50%, -50%); /* Adjust position to center properly */
+        color: white; /* Make the text white for visibility */
+        text-align: center;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
+        border-radius: 10px; /* Optional: add rounded corners to the text background */
+    }
+    
+    
+    .currency-converter {
+        background-color: #f9f9f9;
+        padding: 20px;
+        max-width: 400px;
+        margin: 50px auto;
+        border-radius: 10px;
+        text-align: center; 
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        
+    }
+        
+    .currency-converter h2 {
+            margin-bottom: 20px;
+            color: #333;
+    }
+        
+    .converter-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+    }
+        
+    .converter-form label {
+            flex: 1 1 100%;
+            margin-bottom: 5px;
+            color: #555;
+        
+    }
+        
+    .converter-form input,
+    .converter-form select {
+            flex: 1 1 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+    }
+        
+    #convertButton {
+            padding: 10px 20px;
+            background-color: hsl(200, 100%, 50%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+    }
+        
+    #convertButton:hover {
+            background-color: hsl(200, 100%, 40%);
+    }
+        
+    #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #000;
+    }
+    #result p{
+        color: #000;
+    }
+    /* Funds Calculator Styles */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    
+    .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .calculator-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .sliders {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .slider-group {
+        margin-bottom: 20px;
+    }
+    
+    .slider-group label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #08121d;
+    }
+    
+    .slider-input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .slider-input input[type="range"] {
+        flex: 1;
+        max-width: 200px;
+    }
+    
+    .input-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    .slider-input input[type="number"] {
+        width: 80px;
+        padding: 5px;
+        border: none;
+        border-bottom: 2px solid #333;
+        background-color: transparent;
+        font-size: 1em;
+        text-align: right;
+        outline: none;
+        transition: border-color 0.3s ease;
+    }
+    
+    .slider-input input[type="number"]:focus {
+        border-bottom: 2px solid #0077cc;
+    }
+    
+    .unit-label {
+        position: absolute;
+        right: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1em;
+        color: #333;
+    }
+    
+    .chart-section {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .chart-section canvas {
+        width: 100% !important;
+        height: 400px !important;
+    }
+    
+    .result-section {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .result-box {
+        background-color: #c6c6c6;
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1 1 calc(25% - 20px);
+        text-align: center;
+        box-sizing: border-box;
+        font-size: 1em;
+    }
+    
+    .result-box h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    .result-box p {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+        color: #000000;
+    }
+    
+    strong {
+        font-size: 1.5em;
+        color: #08121d;
+    }
+    
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
+    
+    
+    
+    /* Basic styling for the SVG map */
+    svg {
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        background-color: transparent; /* Ensures the SVG itself isn't masked by a background */
+        margin: 20px auto;
+        margin-left: 20px; 
+    }
+    
+    .land {
+        fill: lightgray;
+        stroke: black;
+        stroke-width: 1px;
+        transition: fill 0.3s ease;
+    }
+    
+    .land:hover {
+        fill: darkgray !important;
+        cursor: pointer;
+    }
+    
+    
+    #map-container {
+        
+        flex: 1.4;
+        margin: 0 auto;
+        position: relative;
+        width: 80%; /* Control the size of the map container */
+    
+    }
+    
+    #county-name-box {
+        position: absolute; /* Ensures it can follow the mouse pointer */
+        display: none; /* Initially hidden */
+        padding: 5px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 5px;
+        pointer-events: none;  /* Prevents the box from interfering with hover events */
+        font-size: 14px;
+        z-index: 1000;  /* Ensures the box appears above other content */
+    }
+    .poverty-info-box {
+        flex: 0.4;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border-radius: 10px;
+        margin:0 auto;
+        text-align: center;
+        width: 80%; /* Fixed width to maintain consistency */
+        min-height: 200px; /* Set a minimum height to ensure consistency */
+        overflow: hidden; 
+        top: 50%; /* Center the text vertically */
+        left: 50%; /* Center the text horizontally */
+        transform: translate(-200%, 40%); /* Adjust position to center properly */
+        
+    }
+    
+    
+    .button-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: 90%;
+        max-width: 1200px;
+        gap: 20px;
+        max-width: 90%;
+        margin: 50px auto;
+        justify-items: center;
+        
+    }
+    /*Index knapper på hjem skjerm*/
+    .button-container1{
+        display: grid;
+        grid-template-areas: 
+        ". economy . "
+        "health lykke memories"
+        ". blog . ";
+        width: 80%;
+        gap: 20px;
+        max-width: 900px;
+        margin: 50px auto;
+    }
+    .rounded-button {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: hsl(0, 0%, 25%);
+        color: #ffffff;
+        margin: 0 auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 20px;
+        height: 180px;
+        width: 300px;
+        font-size: 1.5em;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+    }
+  
+    .rounded-button.lykke {
+        cursor: default;
+        background-color: #d3d3d3; /* Grey color for 'Lykke' button */
+        grid-area: lykke;
+        width: 150px;
+        height: 150px;
+        transform: rotate(45deg); /* Diamond shape */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .rounded-button.lykke span {
+        transform: rotate(-45deg); /* Rotate text back to normal */
+        display: block;
+        width: 100%;
+        text-align: center;
+     }
+   
+    
+    
+    }
+    
+    
