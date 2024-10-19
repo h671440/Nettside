@@ -156,30 +156,95 @@ function generateGrowthChart(labels, investmentData, bankData) {
             }]
         },
         options: {
+            reponsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false
+            },
+
             scales: {
                 x: {
                     title: {
                         display: true,
-                        text: 'År'
+                        text: 'År',
+                        color: '#333',
+                        font: {
+                            size: 16
+                            
                     }
                 },
+                grid: {
+                    color: 'rgba(200, 200, 200, 0.1)',
+                }
+            },
                 y: {
                     title: {
                         display: true,
-                        text: 'Verdi (NOK)'
+                        text: 'Verdi (NOK)',
+                        color: '#333',
+                        font: {
+                            size: 16
+                        }
                     },
-                    beginAtZero: true
+                    beginAtZero: true,
+                    grid: {
+                        color: 'rgba(200, 200, 200, 0.1)',
+                    },
+                    ticks: {
+                        callback: function(value) {
+                            return value / 1000 + "'";                        }
+                    }
+
                 }
             },
             plugins: {
                 tooltip: {
                     callbacks: {
+                        title: function(tooltipItems) {
+                            const year = labels[tooltipItems[0].dataIndex];
+                            return `År: ${year}`;
+                        },
                         label: function(tooltipItem) {
-                            const year = labels[tooltipItem.dataIndex];
-                            const investmentValue = investmentData[tooltipItem.dataIndex];
-                            const bankValue = bankData[tooltipItem.dataIndex];
+                            if (tooltipItem.datasetIndex === 0) {
+                                const investmentValue = investmentData[tooltipItem.dataIndex];
+                                return `Investering: ${investmentValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK' })}`;
+                            } else if (tooltipItem.datasetIndex === 1) {
+                                const bankValue = bankData[tooltipItem.dataIndex];
+                                return `Bank: ${bankValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK' })}`;
+                            }
+                            return '';
+                        }
+                    },
+                    position: 'average',
+                    yAlign: 'top',
+                    displayColors: false
+                },
+                legend: {
+                    display: true,
+                    position: 'top',
+                    labels: {
+                        usePointStyle: true,
+                        pointStyle: 'circle',
+                        color: '#333',
+                        font: {
+                            size: 10
+                        }
+                    }
+                },
+                annotation: {
+                    annotations: {
+                        line1: {
+                            type: 'line',
+                            scaleID: 'y',
+                            value: (ctx) => {
+                                const tooltipItems = ctx.chart.tooltip.dataPoints;
+                                return tooltipItems && tooltipItems.length ? tooltipItems[0].parsed.y : null;
 
-                            return `År: ${year}, Investering: ${investmentValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK' })}, Bank: ${bankValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK' })}`;
+                            },
+                            borderColor: 'rgba(0, 0, 0, 0.2)',
+                            borderWidth: 1,
+                            borderdash: [4, 4],
                         }
                     }
                 }

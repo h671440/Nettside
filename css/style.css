@@ -365,7 +365,174 @@
         background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background to the text */
         border-radius: 10px; /* Optional: add rounded corners to the text background */
     }
+
+
+     /* Funds Calculator Styles */
     
+     * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    
+    .container {
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: center;
+        color:#333;
+    }
+    
+    .calculator-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+    
+    .sliders {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .slider-group {
+        margin-bottom: 20px;
+       
+    }
+    
+    .slider-group label {
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #08121d;
+    }
+    
+    .slider-input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .slider-input input[type="range"] {
+        flex: 1;
+        max-width: 200px;
+        appearance: none;
+        background: hsl(0, 0%, 25%);
+        height: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .slider-input input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: #333;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    .slider-input input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: #333;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .input-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    .slider-input input[type="number"] {
+        width: 80px;
+        padding: 5px;
+        border: none;
+        border-bottom: 2px solid #333;
+        background-color: transparent;
+        font-size: 1em;
+        text-align: right;
+        outline: none;
+        transition: border-color 0.3s ease;
+        color: #333;
+    }
+    
+    .slider-input input[type="number"]:focus {
+        border-bottom: 2px solid #08121d;
+    }
+    
+    .unit-label {
+        position: absolute;
+        right: -25px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1em;
+        color: #333;
+    }
+    
+    .chart-section {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .chart-section canvas {
+        width: 100% !important;
+        height: 400px !important;
+        background: white;
+        border-radius: 15px;
+        
+    }
+    
+    .result-section {
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .result-box {
+        background-color: hsl(0, 0%, 40%);
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1 1 calc(25% - 20px);
+        text-align: center;
+        box-sizing: border-box;
+        font-size: 1em;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .result-box h2 {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    .result-box p {
+        margin-bottom: 10px;
+        font-size: 1.1em;
+        color: #000000;
+    }
+    
+    strong {
+        font-size: 1.5em;
+        color: #08121d;
+    }
+    
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    
+    input[type="number"] {
+        -moz-appearance: textfield;
+    }
 
     
     
