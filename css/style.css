@@ -246,8 +246,8 @@
         margin-top: 20px;
         margin-bottom: 20px;
         border-radius: 20px;
-        height: 65px;
-        width: 80px;
+        height: 80px;
+        width: 120px;
         font-size: 1.3em;
         text-align: center;
         text-decoration: none;
@@ -258,8 +258,8 @@
         cursor: default;
         background-color: #d3d3d3; /* Grey color for 'Lykke' button */
         grid-area: lykke;
-        width: 50px;
-        height: 50px;
+        width: 80px;
+        height: 80px;
         transform: rotate(45deg); /* Diamond shape */
         display: flex;
         justify-content: center;
