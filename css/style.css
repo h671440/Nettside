@@ -853,6 +853,7 @@
         font-size: 2em;
         margin-bottom: 20px;
         text-align: center;
+        color:#333;
     }
     
     .calculator-section {
@@ -870,6 +871,7 @@
     
     .slider-group {
         margin-bottom: 20px;
+       
     }
     
     .slider-group label {
@@ -887,8 +889,28 @@
     .slider-input input[type="range"] {
         flex: 1;
         max-width: 200px;
+        appearance: none;
+        background: hsl(0, 0%, 25%);
+        height: 8px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .slider-input input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: #333;
+        border-radius: 50%;
+        cursor: pointer;
     }
     
+    .slider-input input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: #333;
+        border-radius: 50%;
+        cursor: pointer;
+    }
     .input-wrapper {
         display: flex;
         align-items: center;
@@ -905,10 +927,11 @@
         text-align: right;
         outline: none;
         transition: border-color 0.3s ease;
+        color: #333;
     }
     
     .slider-input input[type="number"]:focus {
-        border-bottom: 2px solid #0077cc;
+        border-bottom: 2px solid #08121d;
     }
     
     .unit-label {
@@ -928,6 +951,9 @@
     .chart-section canvas {
         width: 100% !important;
         height: 400px !important;
+        background: white;
+        border-radius: 15px;
+        
     }
     
     .result-section {
@@ -939,13 +965,14 @@
     }
     
     .result-box {
-        background-color: #c6c6c6;
+        background-color: hsl(0, 0%, 40%);
         padding: 20px;
         border-radius: 10px;
         flex: 1 1 calc(25% - 20px);
         text-align: center;
         box-sizing: border-box;
         font-size: 1em;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     }
     
     .result-box h2 {
@@ -973,6 +1000,7 @@
     input[type="number"] {
         -moz-appearance: textfield;
     }
+
     
     
     
