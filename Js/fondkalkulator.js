@@ -116,11 +116,9 @@ function calculateInvestment() {
 }
 
 
-// Function to format numbers as currency
 function formatNumber(number) {
-    return new Intl.NumberFormat('no-NO', { style: 'currency', currency: 'NOK' }).format(number);
+    return new Intl.NumberFormat('no-NO', { style: 'currency', currency: 'NOK', maximumFractionDigits: 0 }).format(Math.round(number));
 }
-
 function generateGrowthChart(labels, investmentData, bankData) {
     const ctx = document.getElementById('growthChart').getContext('2d');
 
@@ -200,25 +198,36 @@ function generateGrowthChart(labels, investmentData, bankData) {
             },
             plugins: {
                 tooltip: {
+                    position: 'nearest', // Adjust tooltip position
+                    yAlign: 'bottom', // Align tooltip at the bottom of the cursor
+                    backgroundColor: 'rgba(0, 0, 0, 0.3)', // Light transparent black background
+                    titleFont: {
+                        size: 14,
+                        weight: 'bold',
+                    },
+                    bodyFont: {
+                        size: 12,
+                    },
+                    padding: 10,
+                    displayColors: false,
+                    boxPadding: 4,
                     callbacks: {
                         title: function(tooltipItems) {
                             const year = labels[tooltipItems[0].dataIndex];
                             return `År: ${year}`;
                         },
-                        label: function(tooltipItem) {
+                        label: function (tooltipItem) {
                             if (tooltipItem.datasetIndex === 0) {
-                                const investmentValue = investmentData[tooltipItem.dataIndex];
-                                return `Investering: ${investmentValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK' })}`;
+                                const investmentValue = Math.round(investmentData[tooltipItem.dataIndex]);
+                                return `Investering: ${investmentValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK', maximumFractionDigits: 0 })}`;
                             } else if (tooltipItem.datasetIndex === 1) {
-                                const bankValue = bankData[tooltipItem.dataIndex];
-                                return `Bank: ${bankValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK' })}`;
+                                const bankValue = Math.round(bankData[tooltipItem.dataIndex]);
+                                return `Bank: ${bankValue.toLocaleString('no-NO', { style: 'currency', currency: 'NOK', maximumFractionDigits: 0 })}`;
                             }
                             return '';
                         }
-                    },
-                    position: 'average',
-                    yAlign: 'top',
-                    displayColors: false
+                    }
+                   
                 },
                 legend: {
                     display: true,
