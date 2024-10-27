@@ -534,7 +534,101 @@
         -moz-appearance: textfield;
     }
 
+    /* teste ny hjem mobil*/
+
+    .index-background2 {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 20px;
+        min-height: 100vh;
+        width: 100%;
+
+    }
+    .button-container2{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 600px;
+        padding: 20px;
+        
+    }
+    .button-container2 a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width:90%;
+        max-width: 400px;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
+        color: rgba(255, 255, 255, 0.95);
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 1.5em;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.6);
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 1);
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    .button-container2 a:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    .button-container2 a span {
+        position: relative;
+        z-index: 2;
+        font-size: 1.5em;
+        font-weight: bold;
+        padding: 10px;
+        color: rgba(255, 255, 255, 0.95);
+        border-radius: 5px;
+       
+    }
+    .button-container2 a::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        filter: blur(4px);
+        z-index: 1;
+        border-radius: 20px;
+    }
+
+    /*tester ny hjem mobil*/
+
+    .info-section {
+        width: 90%;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 15px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
     
+    .content-block {
+        margin-top: 20px;
+    }
+    
+    .content-block h2 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    
+    .content-block p {
+        font-size: 1.1em;
+        line-height: 1.6em;
+    }
     
 
 }
